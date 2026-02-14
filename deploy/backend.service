@@ -1,0 +1,15 @@
+[Unit]
+Description=Full-Stack AI App Backend
+After=network.target mongod.service
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/opt/full-stack-ai-app/backend
+EnvironmentFile=/opt/full-stack-ai-app/.env
+ExecStart=/opt/full-stack-ai-app/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
