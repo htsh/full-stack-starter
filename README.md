@@ -59,6 +59,24 @@ make install   # installs backend + frontend deps
 make dev       # starts backend on :8000, frontend on :5173
 ```
 
+## Daily Dev Workflow
+
+```bash
+# one-time setup
+make install
+
+# start local hot-reload loop (backend + frontend)
+make dev
+
+# fast confidence checks before commit
+make check
+
+# strict frontend linting (currently may fail until lint debt is fixed)
+make lint
+```
+
+Use your existing always-on MongoDB by setting `MONGODB_URL` in `.env`.
+
 ### Docker
 
 ```bash
@@ -106,7 +124,11 @@ Nginx serves the built frontend and proxies `/api/*` to uvicorn. Backend is stat
 | Command | Description |
 |---------|-------------|
 | `make install` | Install all dependencies |
-| `make dev` | Start backend + frontend for development |
+| `make dev` | Start backend + frontend for development with one supervisor |
+| `make check` | Run green-by-default quick checks |
+| `make check-backend` | Verify backend imports and app wiring |
+| `make check-frontend` | Build frontend for production |
+| `make lint` | Run strict frontend linting |
 | `make backend` | Start backend only |
 | `make frontend` | Start frontend only |
 | `make docker-up` | Start all services via Docker Compose |
