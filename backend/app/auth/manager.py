@@ -3,7 +3,7 @@ from typing import Optional
 from beanie import PydanticObjectId
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager
-from fastapi_users_db_beanie import BeanieUserDatabase
+from fastapi_users_db_beanie import BeanieUserDatabase, ObjectIDIDMixin
 
 from app.config import settings
 from app.models.user import User
@@ -13,7 +13,7 @@ async def get_user_db():
     yield BeanieUserDatabase(User)
 
 
-class UserManager(BaseUserManager[User, PydanticObjectId]):
+class UserManager(ObjectIDIDMixin, BaseUserManager[User, PydanticObjectId]):
     reset_password_token_secret = settings.reset_password_secret
     verification_token_secret = settings.verification_secret
 
