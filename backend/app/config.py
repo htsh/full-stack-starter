@@ -26,11 +26,11 @@ class Settings(BaseSettings):
     # Stripe
     stripe_secret_key: str = ""
     stripe_webhook_secret: str = ""
-    stripe_success_url: str = "http://localhost:5173/dashboard?payment=success"
-    stripe_cancel_url: str = "http://localhost:5173/pricing?payment=cancelled"
+    stripe_success_url: str = "http://localhost:7777/dashboard?payment=success"
+    stripe_cancel_url: str = "http://localhost:7777/pricing?payment=cancelled"
 
     # App
-    backend_cors_origins: str = "http://localhost:5173"
+    backend_cors_origins: str = "http://localhost:7777"
     initial_free_credits: int = 10
 
 

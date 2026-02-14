@@ -26,12 +26,12 @@ services:
       dockerfile: Dockerfile
       target: build
     ports:
-      - "5173:5173"
+      - "7777:7777"
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/index.html:/app/index.html
       - frontend_modules:/app/node_modules
-    command: pnpm dev --host 0.0.0.0
+    command: pnpm dev --host 0.0.0.0 --port 7777
     depends_on:
       - backend
 

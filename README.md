@@ -56,7 +56,7 @@ cp .env.example .env
 # Fill in your secrets (JWT_SECRET, Stripe keys, etc.)
 
 make install   # installs backend + frontend deps
-make dev       # starts backend on :8000, frontend on :5173
+make dev       # starts backend on :8000, frontend on :7777
 ```
 
 ## Daily Dev Workflow

@@ -14,7 +14,7 @@ Repository-specific guidance for coding agents working in `/Users/hitesh/Code/fu
   - `frontend`: React 19 + TypeScript + Vite + Tailwind v4 + Zustand.
 - Local dev ports:
   - Backend: `http://localhost:8000`
-  - Frontend: `http://localhost:5173`
+  - Frontend: `http://localhost:7777`
 - Frontend calls backend through Vite proxy at `/api` (see `frontend/vite.config.ts`).
 
 ## High-Signal File Map
