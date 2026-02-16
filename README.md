@@ -59,6 +59,42 @@ make install   # installs backend + frontend deps
 make dev       # starts backend on :8000, frontend on :7777
 ```
 
+## Create A New App From This Starter
+
+Short answer: yes, you can copy this repo.
+
+Recommended options:
+
+1. Use as a GitHub template (best if you want a clean history per app)
+   - Click **Use this template** in GitHub, create your new repo, then clone it.
+
+2. Clone then detach history (best if template is not enabled)
+
+```bash
+git clone https://github.com/htsh/full-stack-starter.git my-new-app
+cd my-new-app
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit from full-stack starter"
+git branch -M main
+git remote add origin <your-new-repo-url>
+git push -u origin main
+```
+
+3. Fork (best if you want to keep upstream merge path)
+   - Fork this repo, then clone your fork.
+
+After creating your new app repo:
+
+```bash
+cp .env.example .env
+# update secrets, Stripe URLs, CORS origins, app-specific values
+
+make install
+make dev
+```
+
 ## Daily Dev Workflow
 
 ```bash
